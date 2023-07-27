@@ -1,1 +1,51 @@
-<p>signup works!</p>
+<div class="hero min-h-screen bg-base-200">
+    <!-- *** ALERT  *** -->
+    <!--<app-alert *ngIf="warning" [message]="warningMessage"></app-alert>-->
+    <!-- *** ALERT  *** -->
+
+    <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold">Sign up!</h1>
+            <p class="py-6">Create a new account.</p>
+        </div>
+        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div class="card-body">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Nombre de usuario:</span>
+                    </label>
+                    <input type="text" placeholder="user" class="input input-bordered" [(ngModel)]="fullname"
+                        [ngClass]="{ 'input-error': warning && !fullname || !fullnameRegex.test(fullname) }" />
+                    <span *ngIf="warning && !fullname" class="text-red-500 text-xs">Fullname is required.</span>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Correo electrónico:</span>
+                    </label>
+                    <input type="text" placeholder="email" class="input input-bordered" [(ngModel)]="email"
+                        [ngClass]="{ 'input-error': warning && !email || !emailregex.test(email) }" />
+                    <span *ngIf="warning && !email" class="text-red-500 text-xs">Correo requerido</span>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Contraseña:</span>
+                    </label>
+                    <input type="password" placeholder="password"
+                        class="input input-bordered {{ warning && !password || password.length < 6 ? 'border-red-500' : '' }}"
+                        [(ngModel)]="password" />
+                    <span *ngIf="warning && !password || password.length < 6" class="text-red-500 text-xs">Contraseña
+                        requerida</span>
+                </div>
+                <div class="form-control mt-6">
+                    <button (disabled)="disableLoginButton" class="btn btn-primary" (click)="signup($event)">
+                        registrarse</button>
+                </div>
+
+                <hr><span style="text-align: center;">Ya tienes una cuenta?</span>
+                <hr />
+                <button (disabled)="disableLoginButton" class="btn" (click)="login($event)">Ingresar</button>
+
+            </div>
+        </div>
+    </div>
+</div>

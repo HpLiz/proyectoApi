@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosService } from './../../../services/usuarios.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
-  
+  constructor(private router: Router, private UsuariosService: UsuariosService) { }
+
   public user: any = null;
+
+  nombre: string = '';
+  correo: string = '';
+  imagen: string = '';
 
   email: string = '';
   password: string = '';
@@ -20,35 +26,35 @@ export class LoginComponent {
 
   login(event: Event) {
     event.preventDefault();
-    /*const user: object = {
+    const user: object = {
       email: this.email,
       password: this.password,
       fullname: this.fullname,
-    };*/
-    this.router.navigate(['/home']);
-    /*if (this.validar()) {
-      sessionStorage.setItem('fullname', this.fullname);
+    };
+
+    if (this.validar()) {
+      //sessionStorage.setItem('fullname', this.fullname);
+      sessionStorage.setItem('email', this.email);
 
       this.router.navigate(['/home']);
-    }*/
-  }
-  
-  signup(event: Event) {
-    this.router.navigate(['/signup']);
+    }
   }
 
+  singup(event: Event) {
+    this.router.navigate(['/singup']);
+  }
+  emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   validar() {
     //if (!this.fullname || !this.password || !this.email) {
-    if (!this.fullname || !this.password) {
+    if (!this.email || !this.password) {
       // alert();
       this.warningMessage = 'Todos los campos son obligatorios';
       this.warning = true;
       return false;
     }
-    // valida nombre
-    const fullnameRegex = /^[a-zA-Z\s]+$/;
-    if (!fullnameRegex.test(this.fullname)) {
-      this.warningMessage = 'El nombre solo puede contener letras y numeros';
+    // validar email
+    if (!this.emailregex.test(this.email)) {
+      this.warningMessage = 'Correo electrónico inválido.';
       this.warning = true;
       return false;
     }
@@ -65,4 +71,17 @@ export class LoginComponent {
   }
 
   // para guardar en storag
+
+  ngOnInit() {
+    this.UsuariosService.getUsers('https://randomuser.me/api/').subscribe(
+      (res: any) => {
+        console.log('Response', res.results[0]);
+        this.user = res.results[0];
+        console.log(this.user.email);
+        sessionStorage.setItem('nombre', this.user.name.first + this.user.name.last);
+        sessionStorage.setItem('correo', this.user.email);
+        sessionStorage.setItem('foto', this.user.picture.medium);
+      }
+    );
+  }
 }
