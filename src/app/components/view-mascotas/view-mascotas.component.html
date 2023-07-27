@@ -1,0 +1,38 @@
+<app-navbar [textNavbar]="'Veterinaria Manchitas - Mascotas'"></app-navbar>
+
+<div class="w-4/5 mx-auto flex flex-col items-center content-center">
+    <!-- TABLA DE USUARIOS -->
+    <div class="overflow-x-auto w-3/4 overflow-y-hidden border-solid">
+        <table class="table border border-solid border-black">
+            <!-- head -->
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Color</th>
+                    <th>Dueño</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let p of pets">
+                    <td>
+                        <div class="font-bold">{{p.nombre}} </div>
+                    </td>
+                    <td>
+                        {{p.tipoMascota_id}}
+                    </td>
+                    <td>{{p.color}}</td>
+                    <td>{{p.clientes_id}}</td>
+                    <td>
+                        <button class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                       <button class="btn btn-small btn-error"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

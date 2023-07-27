@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/models/Usuario';
+import { UsuarioI } from 'src/models/Usuario';
+import { Router } from '@angular/router';
 import { UsuariosService } from './../../../services/usuarios.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UsuariosService } from './../../../services/usuarios.service';
   styleUrls: ['./view-usuarios.component.css']
 })
 export class ViewUsuariosComponent implements OnInit{
-  constructor(private usuariosService: UsuariosService) {}
+  constructor(private router: Router, private usuariosService: UsuariosService) {}
   public users: any = [];
 
   ngOnInit(): void {
@@ -20,5 +21,18 @@ export class ViewUsuariosComponent implements OnInit{
       .subscribe((res: any) => {
         this.users = res;
       });
+  }
+
+  editarU(id: any){
+    this.router.navigate(['editar-u',id])
+  }
+  borrarU(id: any){
+    this.usuariosService.eliminar(id)
+    .subscribe((res: any) => {
+      console.log('Usuario eliminado:', res);
+      this.cargarUsuarios();
+    }, (error: any) => {
+      console.error('Error al eliminar el usuario:', error);
+    });
   }
 }

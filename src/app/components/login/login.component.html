@@ -49,22 +49,22 @@
             <!-- Col -->
             <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
                 <h3 class="pt-4 text-2xl text-center">Bienvenido!</h3>
-                <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">Correo electrónico</span>
                         </label>
-                        <input type="text" placeholder="correo electrónico" class="input input-bordered" />
+                        <input type="email" placeholder="correo electrónico" class="input input-bordered" formControlName="usuario"/>
                     </div>
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">Contraseña</span>
                         </label>
-                        <input type="text" placeholder="Contraseña" class="input input-bordered" />
+                        <input type="password" placeholder="Contraseña" class="input input-bordered" formControlName="contrasenia"/>
                     </div>
                     <div class="mb-3 text-center p-4">
-                        <button (click)="login($event)" class="w-full px-4 py-2 rounded-full btn-primary"
-                            type="button">Ingresa
+                        <button class="w-full px-4 py-2 rounded-full btn-primary"
+                            type="submit">Ingresa
                         </button>
                     </div>
                     <div class="text-center">

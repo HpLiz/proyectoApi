@@ -1,0 +1,53 @@
+<app-navbar [textNavbar]="'Veterinaria Manchitas - Editar médico'"></app-navbar>
+<!-- Contenido -->
+<div class="w-4/5 mx-auto flex flex-col items-center content-center" >
+
+    <body class="bg-gray-400">
+        <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded" (submit)="actualizarUser()">
+            <div class="mb-4 md:flex md:justify-between">
+                <div class="form-control w-1/2" >
+                    <label class="label">
+                        <span class="label-text">Nombre</span>
+                    </label>
+                    <input type="text" placehol der="Nombre" class="input input-bordered" 
+                    name="nombre" [(ngModel)]="user.nombre"/>
+                </div>
+                <div class="form-control w-1/2">
+                    <label class="label">
+                        <span class="label-text">Apellido</span>
+                    </label>
+                    <input type="text" placeholder="Apellido" class="input input-bordered" 
+                    name="apellido" [(ngModel)]="user.apellido"/>
+                </div>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Correo electrónico</span>
+                </label>
+                <input type="email" placeholder="correo electrónico" class="input input-bordered" 
+                name="email" [(ngModel)]="user.usuario"/>
+            </div>
+            <div class="mb-4 md:flex md:justify-between">
+                <div class="form-control w-1/2">
+                    <label class="label">
+                        <span class="label-text">Contraseña</span>
+                    </label>
+                    <input type="text" placeholder="contraseña" class="input input-bordered" 
+                    name="pass" [(ngModel)]="user.contrasenia"/>
+                </div>
+                <div class="form-control w-1/2">
+                    <label class="label">
+                        <span class="label-text">Nueva contraseña</span>
+                    </label>
+                    <input type="text" placeholder="c_contraseña" class="input input-bordered" 
+                    name="new_c"/>
+                </div>
+            </div>
+            <!-- Aquí van los botones -->
+            <div class="">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button class="btn">Cerrar</button>
+            </div>
+        </form>
+    </body>
+</div>
