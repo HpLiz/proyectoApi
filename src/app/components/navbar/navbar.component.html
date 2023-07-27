@@ -1,11 +1,11 @@
-<div class="navbar bg-base-100">
-    <div class="flex-none">
+<div class="navbar bg-base-300">
+    <div class="navbar-start">
         <app-drawer></app-drawer>
       </div>
-    <div class="flex-1">
+    <div class="navbar-center">
         <a class=" normal-case text-2xl font-extrabold">{{textNavbar}}</a>
     </div>
-    <div class="flex-none gap-2">
+    <div class="navbar-end gap-2">
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
@@ -20,7 +20,7 @@
             </a>
           </li>
           <li><a>Settings</a></li>
-          <li><a routerLink="/login">Cerrar sesion</a></li>
+          <li><a routerLink="/login"><i class="fa-solid fa-right-from-bracket"></i>Cerrar sesion</a></li>
         </ul>
       </div>
     </div>

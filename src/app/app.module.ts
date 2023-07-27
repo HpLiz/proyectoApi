@@ -11,12 +11,14 @@ import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { FormsModule } from '@angular/forms';
+import { ViewUsuariosComponent } from './components/view-usuarios/view-usuarios.component';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'usuarios-list', component: ViewUsuariosComponent },
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const rutas: Routes = [
     LoginComponent,
     SignupComponent,
     NavbarComponent,
-    DrawerComponent
+    DrawerComponent,
+    ViewUsuariosComponent
   ],
   imports: [
     BrowserModule,

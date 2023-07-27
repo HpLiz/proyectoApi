@@ -16,7 +16,6 @@
             "outputPath": "dist/proyecto-api",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "./proyectoApi/",
             "polyfills": [
               "zone.js"
             ],

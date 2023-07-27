@@ -2,15 +2,19 @@
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
       <!-- Page content here -->
-      <label for="my-drawer" class="btn btn-primary drawer-button"></label>
+      <label for="my-drawer" class="btn btn-primary drawer-button">
+        <i class="fa-solid fa-bars"></i>
+      </label>
     </div> 
     <div class="drawer-side">
       <label for="my-drawer" class="drawer-overlay"></label>
       <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
         <!-- Sidebar content here -->
-        <li><a>Sidebar Item 1</a></li>
-        <li><a>Sidebar Item 2</a></li>
-        <li><a routerLink="/login">Cerrar sesion</a></li>
+        <li><a routerLink="/home"><i class="fa-solid fa-house"></i>Inicio</a></li>
+        <li><a routerLink="/usuarios-list"><i class="fa-solid fa-users-line"></i>Usuarios</a></li>
+        <li><a routerLink="/clientes-list"><i class="fa-solid fa-ghost"></i>Clientes</a></li>
+        <li><a routerLink="/mascotas-list"><i class="fa-solid fa-ghost"></i>Mascotas</a></li>
+        <li><a routerLink="/login"><i class="fa-solid fa-right-from-bracket"></i>Cerrar sesion</a></li>
         
       </ul>
     </div>
