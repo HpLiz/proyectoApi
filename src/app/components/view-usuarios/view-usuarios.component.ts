@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/models/Usuario';
 import { UsuariosService } from './../../../services/usuarios.service';
 
@@ -7,7 +7,7 @@ import { UsuariosService } from './../../../services/usuarios.service';
   templateUrl: './view-usuarios.component.html',
   styleUrls: ['./view-usuarios.component.css']
 })
-export class ViewUsuariosComponent {
+export class ViewUsuariosComponent implements OnInit{
   constructor(private usuariosService: UsuariosService) {}
   public users: any = [];
 
@@ -16,9 +16,9 @@ export class ViewUsuariosComponent {
   }
   public cargarUsuarios() {
     this.usuariosService
-      .getUsers('http://localhost/apiVeterinaria/public/api/usuarios')
+      .getUsers(`http://localhost/apiVeterinaria/public/api/usuarios`)
       .subscribe((res: any) => {
-        this.users = res.results;
+        this.users = res;
       });
   }
 }
