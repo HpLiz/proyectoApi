@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ViewUsuariosComponent } from './components/view-usuarios/view-usuarios.component';
 import { ViewClientesComponent } from './components/view-clientes/view-clientes.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -21,6 +22,9 @@ const rutas: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'usuarios-list', component: ViewUsuariosComponent },
+  { path: 'clientes-list', component: ViewClientesComponent },
+  { path: 'crear-u', component: CrearUsuarioComponent },
+  { path: 'editar-u/:id', component: EditarUsuarioComponent },
 ];
 
 @NgModule({
@@ -33,7 +37,8 @@ const rutas: Routes = [
     DrawerComponent,
     ViewUsuariosComponent,
     ViewClientesComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
