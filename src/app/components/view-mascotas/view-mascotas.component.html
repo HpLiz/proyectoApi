@@ -1,4 +1,4 @@
-<app-navbar [textNavbar]="'Veterinaria Manchitas - Clientes'"></app-navbar>
+<app-navbar [textNavbar]="'Veterinaria Manchitas - Mascotas'"></app-navbar>
 
 <div class="w-4/5 mx-auto flex flex-col items-center content-center">
     <!-- TABLA DE USUARIOS -->
@@ -8,21 +8,23 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Direccion</th>
-                    <th>Medico</th>
+                    <th>Tipo</th>
+                    <th>Color</th>
+                    <th>Dueño</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr
-                    *ngFor="let c of clientes">
+                    *ngFor="let p of pets">
                     <td>
-                        <div class="font-bold">{{c.nombre + ' ' + c.apellido}} </div>
+                        <div class="font-bold">{{p.nombre}} </div>
                     </td>
                     <td>
-                        {{c.direccion}}
+                        {{p.tipoMascota_id}}
                     </td>
-                    <td>{{c.usuarios_id}}</td>
+                    <td>{{p.color}}</td>
+                    <td>{{p.clientes_id}}</td>
                     <td>
                         <button class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
                        <button class="btn btn-small btn-error"><i class="fa-solid fa-trash"></i></button>
