@@ -26,4 +26,13 @@ export class ViewUsuariosComponent implements OnInit{
   editarU(id: any){
     this.router.navigate(['editar-u',id])
   }
+  borrarU(id: any){
+    this.usuariosService.eliminar(id)
+    .subscribe((res: any) => {
+      console.log('Usuario eliminado:', res);
+      this.cargarUsuarios();
+    }, (error: any) => {
+      console.error('Error al eliminar el usuario:', error);
+    });
+  }
 }

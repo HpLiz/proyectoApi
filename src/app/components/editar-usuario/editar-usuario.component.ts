@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UsuarioI } from '../../modelos/usuario.interface';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UsuariosService } from '../../../services/usuarios.service';
-import { FormGroup, FormControl, Validator } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -15,14 +12,13 @@ export class EditarUsuarioComponent implements OnInit{
   constructor(private activerouter: ActivatedRoute, private router: Router, private usuariosService: UsuariosService){}
   
   public user: any = {};
-  nombre: string = '';
 
   ngOnInit() {
     this.cargarUsuario();
   }
   
   
-  
+/*----------------------- Cargar datos ---------------------- */
   public cargarUsuario() {
     const id = this.activerouter.snapshot.paramMap.get('id');
     this.usuariosService
@@ -36,13 +32,14 @@ export class EditarUsuarioComponent implements OnInit{
       });
   }
 
+/*----------------------- Actualizar ---------------------- */
   actualizarUser() {
     const datosActualizados = {
       nombre: this.user.nombre,
       apellido: this.user.apellido,
       usuario: this.user.usuario,
       contrasenia: this.user.contrasenia,
-      imagen: "nohay"
+      imagen: this.user.imagen
     };
     const id = this.activerouter.snapshot.paramMap.get('id');
     this.usuariosService.actualizar(id, datosActualizados)
@@ -53,5 +50,7 @@ export class EditarUsuarioComponent implements OnInit{
         console.error('Error al actualizar el usuario:', error);
       });
   }
+/*----------------------- Eliminar ---------------------- */
 
+/*----------------------- Expandir ---------------------- */
 }

@@ -19,26 +19,16 @@ export class UsuariosService {
     return this.http.get(direccion)
   }
 
-  public registrar(usuario: UsuarioI) {
-    return this.http.post(`${this.ruta}`, usuario);
+  public registrar(usuario: any) {
+    return this.http.post(this.ruta, usuario);
   }
   public actualizar(id: any, usuario: any) {
     let direccion = this.ruta + "/" + id
     return this.http.put(direccion, usuario);
   }
-  /*  rutaApi = "http://localhost/apiVeterinaria/public/api/usuarios";
 
-
-  registrar(usuario: UsuarioI) {
-    return this.http.post(`${this.rutaApi}`, usuario);
+  public eliminar(id: number) {
+    let direccion = this.ruta + "/" + id
+    return this.http.delete(direccion);
   }
-
-  actualizar(usuario: UsuarioI) {
-    return this.http.put(`${this.rutaApi}`, usuario);
-  }
-
-  eliminar(id: string | number) {
-    return this.http.delete(`${this.rutaApi}/?id=${id}`);
-  }
-  */
 }
