@@ -22,6 +22,10 @@ export class UsuariosService {
   public registrar(usuario: UsuarioI) {
     return this.http.post(`${this.ruta}`, usuario);
   }
+  public actualizar(id: any, usuario: any) {
+    let direccion = this.ruta + "/" + id
+    return this.http.put(direccion, usuario);
+  }
   /*  rutaApi = "http://localhost/apiVeterinaria/public/api/usuarios";
 
 
