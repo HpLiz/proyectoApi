@@ -12,6 +12,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { FormsModule } from '@angular/forms';
 import { ViewUsuariosComponent } from './components/view-usuarios/view-usuarios.component';
+import { ViewClientesComponent } from './components/view-clientes/view-clientes.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -29,7 +31,9 @@ const rutas: Routes = [
     SignupComponent,
     NavbarComponent,
     DrawerComponent,
-    ViewUsuariosComponent
+    ViewUsuariosComponent,
+    ViewClientesComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     BrowserModule,

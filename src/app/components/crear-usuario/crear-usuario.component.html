@@ -1,0 +1,53 @@
+<button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+<dialog id="my_modal_1" class="modal">
+    <form method="dialog" class="modal-box">
+        <!-- Titulo -->
+        <h3 class="font-bold text-lg">Agregar usuario</h3>
+        <!-- Contenido -->
+
+        <body class="bg-gray-400">
+            <!-- Container -->
+            <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                <div class="mb-4 md:flex md:justify-between">
+                    <div class="form-control w-1/2">
+                        <label class="label">
+                            <span class="label-text">Nombre</span>
+                        </label>
+                        <input type="text" placeholder="Nombre" class="input input-bordered" />
+                    </div>
+                    <div class="form-control w-1/2">
+                        <label class="label">
+                            <span class="label-text">Apellido</span>
+                        </label>
+                        <input type="text" placeholder="Apellido" class="input input-bordered" />
+                    </div>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Correo electrónico</span>
+                    </label>
+                    <input type="email" placeholder="correo electrónico" class="input input-bordered" />
+                </div>
+                <div class="mb-4 md:flex md:justify-between">
+                    <div class="form-control w-1/2">
+                        <label class="label">
+                            <span class="label-text">Contraseña</span>
+                        </label>
+                        <input type="password" placeholder="contraseña" class="input input-bordered" />
+                    </div>
+                    <div class="form-control w-1/2">
+                        <label class="label">
+                            <span class="label-text">Confirma contraseña</span>
+                        </label>
+                        <input type="password" placeholder="c_contraseña" class="input input-bordered" />
+                    </div>
+                </div>
+            </form>
+        </body>
+        <!-- Aquí van los botones -->
+        <div class="modal-action">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button class="btn">Cerrar</button>
+        </div>
+    </form>
+</dialog>
