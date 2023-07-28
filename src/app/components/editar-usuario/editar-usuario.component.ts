@@ -9,7 +9,8 @@ import { UsuariosService } from '../../../services/usuarios.service';
 })
 export class EditarUsuarioComponent implements OnInit{
 
-  constructor(private activerouter: ActivatedRoute, private router: Router, private usuariosService: UsuariosService){}
+  constructor(private activerouter: ActivatedRoute, 
+    private router: Router, private usuariosService: UsuariosService){}
   
   public user: any = {};
 
