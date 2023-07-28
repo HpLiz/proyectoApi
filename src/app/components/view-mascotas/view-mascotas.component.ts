@@ -11,6 +11,7 @@ export class ViewMascotasComponent implements OnInit{
 
   constructor(private router: Router, private mascotasService: MascotasService) {}
   public pets: any = [];
+  paginaActual = 1;
 
   ngOnInit(): void {
     this.cargarPets();
@@ -22,7 +23,6 @@ export class ViewMascotasComponent implements OnInit{
         this.pets = res;
       });
   }
-  getTipos(){
-    
-  }
+  
+
 }

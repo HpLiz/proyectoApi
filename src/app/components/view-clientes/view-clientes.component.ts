@@ -11,6 +11,7 @@ export class ViewClientesComponent implements OnInit{
 
   constructor(private router: Router, private clientesService: ClientesService) {}
   public clientes: any = [];
+  paginaActual = 1;
 
   ngOnInit(): void {
     this.cargarClientes();

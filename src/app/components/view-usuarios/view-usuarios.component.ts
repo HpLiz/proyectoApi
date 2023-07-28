@@ -10,6 +10,7 @@ import { UsuariosService } from './../../../services/usuarios.service';
 export class ViewUsuariosComponent implements OnInit{
   constructor(private router: Router, private usuariosService: UsuariosService) {}
   public users: any = [];
+  paginaActual = 1;
 
   ngOnInit(): void {
     this.cargarUsuarios();

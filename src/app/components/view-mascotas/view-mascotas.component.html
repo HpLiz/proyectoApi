@@ -1,6 +1,7 @@
 <app-navbar [textNavbar]="'Veterinaria Manchitas - Mascotas'"></app-navbar>
 
 <div class="w-4/5 mx-auto flex flex-col items-center content-center">
+    <pagination-controls (pageChange)="paginaActual= $event"></pagination-controls>
     <!-- TABLA DE USUARIOS -->
     <div class="overflow-x-auto w-3/4 overflow-y-hidden border-solid">
         <table class="table border border-solid border-black">

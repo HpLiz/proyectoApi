@@ -1,1 +1,46 @@
-<p>editar-cliente works!</p>
+<app-navbar [textNavbar]="'Veterinaria Manchitas - Editar médico'"></app-navbar>
+<!-- Contenido -->
+<div class="w-4/5 mx-auto flex flex-col items-center content-center" >
+
+        <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded" (submit)="actualizarCliente()">
+            <div class="mb-4 md:flex md:justify-between">
+                <div class="form-control w-1/2" >
+                    <label class="label">
+                        <span class="label-text">Nombre</span>
+                    </label>
+                    <input type="text" placehol der="Nombre" class="input input-bordered" 
+                    name="nombre" [(ngModel)]="cliente.nombre"/>
+                </div>
+                <div class="form-control w-1/2">
+                    <label class="label">
+                        <span class="label-text">Apellido</span>
+                    </label>
+                    <input type="text" placeholder="Apellido" class="input input-bordered" 
+                    name="apellido" [(ngModel)]="cliente.apellido"/>
+                </div>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Direccion</span>
+                </label>
+                <input type="text" placeholder="correo electrónico" class="input input-bordered" 
+                name="email" [(ngModel)]="cliente.direccion"/>
+            </div>
+            <div class="mb-4 md:flex md:justify-between">
+                <div class="form-control w-1/2">
+                    <label class="label">
+                        <span class="label-text">Médico a cargo</span>
+                    </label>
+                    <select class="input input-bordered" [(ngModel)]="cliente.usuarios_id" name="usuario_id">
+                        <option value="" disabled selected>Seleccione un médico</option>
+                        <option *ngFor="let user of users" [value]="user.id">{{ user.nombre }} {{ user.apellido }}</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Aquí van los botones -->
+            <div class="">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" (click)="regresar()" class="btn">Cerrar</button>
+            </div>
+        </form>
+</div>

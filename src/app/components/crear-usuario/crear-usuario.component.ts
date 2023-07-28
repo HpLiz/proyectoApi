@@ -53,4 +53,17 @@ export class CrearUsuarioComponent{
         console.error('Error al crear el usuario:', error);
       });
   }
+  /*----------------------------- Validar ---------------------------- */
+  public isFormValid = false;
+  public c_con = '';
+  public validarFormulario() {
+    // Verificar que todos los campos requeridos estén llenos
+    if (this.nombre && this.apellido && this.usuario && this.contrasenia && this.c_con) {
+      // Verificar que las contraseñas coincidan
+      this.isFormValid = this.contrasenia === this.c_con;
+    } else {
+      this.isFormValid = false;
+    }
+  }
+
 }

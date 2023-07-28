@@ -1,6 +1,7 @@
 <app-navbar [textNavbar]="'Veterinaria Manchitas - Clientes'"></app-navbar>
 
 <div class="w-4/5 mx-auto flex flex-col items-center content-center">
+    <pagination-controls (pageChange)="paginaActual= $event"></pagination-controls>
     <div>
         <app-crear-cliente></app-crear-cliente>
     </div>

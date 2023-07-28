@@ -1,4 +1,4 @@
-<button class="btn" onclick="my_modal_1.showModal()" >Agregar usuario</button>
+<button class="btn bt1" onclick="my_modal_1.showModal()" >Agregar cliente</button>
 <dialog #modalRef id="my_modal_1" class="modal">
     <form method="dialog" class="modal-box bg-white rounded" (submit)="crearUser()">
         <!-- Titulo -->
@@ -32,8 +32,10 @@
                         <label class="label">
                             <span class="label-text">Medico a cargo</span>
                         </label>
-                        <input type="text" placeholder="contraseña" class="input input-bordered" 
-                        name="contrasenia" [(ngModel)]="usuario_id"/>
+                        <select class="input input-bordered" [(ngModel)]="usuarios_id" name="usuario_id">
+                            <option value="" disabled selected>Seleccione un médico</option>
+                            <option *ngFor="let user of users" [value]="user.id">{{ user.nombre }} {{ user.apellido }}</option>
+                        </select>
                     </div>
                 </div>
         <!-- Aquí van los botones -->
