@@ -9,16 +9,16 @@
                         <label class="label">
                             <span class="label-text">Nombre</span>
                         </label>
-                        <input type="text" placeholder="Nombre" class="input input-bordered" 
-                        name="nombre" [(ngModel)]="nombre" [ngClass]="{ 'invalid-input': !nombre }" (input)="validarFormulario()"/>
+                        <input type="text" placeholder="Nombre" class="input input-bordered" name="nombre"
+                         [(ngModel)]="nombre" [ngClass]="{ 'invalid-input': !nombre }" (input)="validarFormulario()"/>
                         <span *ngIf=" !nombre" class="text-red-500 text-xs">Nombre es requerido</span>
                     </div>
                     <div class="form-control w-1/2">
                         <label class="label">
                             <span class="label-text">Apellido</span>
                         </label>
-                        <input type="text" placeholder="Apellido" class="input input-bordered"
-                        name="apellido" [(ngModel)]="apellido" [ngClass]="{ 'invalid-input': !apellido }" (input)="validarFormulario()"/>
+                        <input type="text" placeholder="Apellido" class="input input-bordered" name="apellido"
+                         [(ngModel)]="apellido" [ngClass]="{ 'invalid-input': !apellido }" (input)="validarFormulario()"/>
                         <span *ngIf=" !apellido" class="text-red-500 text-xs">Apellido es requerido</span>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                         </label>
                         <input type="password" placeholder="c_contraseña" class="input input-bordered" 
                         name="c_con" [(ngModel)]="c_con" [ngClass]="{ 'invalid-input': !c_con }" (input)="validarFormulario()"/>
-                        <span *ngIf=" !isFormValid" class="text-red-500 text-xs">Las contraseñas no coinciden</span>
+                        <span *ngIf=" !validarContrasenias()" class="text-red-500 text-xs">Las contraseñas no coinciden</span>
                     </div>
                 </div>
         <!-- Aquí van los botones -->

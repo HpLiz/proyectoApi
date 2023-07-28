@@ -66,4 +66,16 @@ export class CrearClienteComponent implements OnInit{
         console.error('Error al crear el cliente:', error);
       });
   }
+  /*----------------------------- Validar ---------------------------- */
+  public isFormValid = false;
+  public isMedSelec = false;
+
+  public validarFormulario() {
+    // Verificar que todos los campos requeridos estén llenos
+    if (this.nombre && this.apellido && this.direccion && this.usuarios_id) {
+      this.isFormValid = true;
+    } else {
+      this.isFormValid = false;
+    }
+  }
 }

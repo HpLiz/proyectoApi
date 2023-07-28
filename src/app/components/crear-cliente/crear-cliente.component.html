@@ -9,38 +9,43 @@
                         <label class="label">
                             <span class="label-text">Nombre</span>
                         </label>
-                        <input type="text" placeholder="Nombre" class="input input-bordered" 
-                        name="nombre" [(ngModel)]="nombre"/>
+                        <input type="text" placeholder="Nombre" class="input input-bordered" name="nombre" 
+                        [(ngModel)]="nombre" [ngClass]="{ 'invalid-input': !nombre }" (input)="validarFormulario()"/>
+                        <span *ngIf=" !nombre" class="text-red-500 text-xs">Nombre es requerido</span>
                     </div>
                     <div class="form-control w-1/2">
                         <label class="label">
                             <span class="label-text">Apellido</span>
                         </label>
-                        <input type="text" placeholder="Apellido" class="input input-bordered"
-                        name="apellido" [(ngModel)]="apellido"/>
+                        <input type="text" placeholder="Apellido" class="input input-bordered" name="apellido" 
+                        [(ngModel)]="apellido" [ngClass]="{ 'invalid-input': !apellido }" (input)="validarFormulario()"/>
+                        <span *ngIf=" !apellido" class="text-red-500 text-xs">Apellido es requerido</span>
                     </div>
                 </div>
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Direccion</span>
                     </label>
-                    <input type="email" placeholder="correo electrónico" class="input input-bordered"
-                    name="usuario" [(ngModel)]="direccion"/>
+                    <input type="text" placeholder="Direccion" class="input input-bordered" name="direccion" 
+                    [(ngModel)]="direccion" [ngClass]="{ 'invalid-input': !direccion }" (input)="validarFormulario()"/>
+                    <span *ngIf=" !direccion" class="text-red-500 text-xs">Direccion es requerida</span>
                 </div>
                 <div class="mb-4 md:flex md:justify-between">
                     <div class="form-control w-1/2">
                         <label class="label">
                             <span class="label-text">Medico a cargo</span>
                         </label>
-                        <select class="input input-bordered" [(ngModel)]="usuarios_id" name="usuario_id">
+                        <select class="input input-bordered" [(ngModel)]="usuarios_id" name="usuarios_id"
+                        [ngClass]="{ 'invalid-input': !usuarios_id }" (change)="validarFormulario()">
                             <option value="" disabled selected>Seleccione un médico</option>
                             <option *ngFor="let user of users" [value]="user.id">{{ user.nombre }} {{ user.apellido }}</option>
                         </select>
+                        <span *ngIf=" !usuarios_id" class="text-red-500 text-xs">Medico es requerido</span>
                     </div>
                 </div>
         <!-- Aquí van los botones -->
         <div class="modal-action">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!isFormValid">Guardar</button>
             <button type="button" class="btn" (click)="cerrarModal()">Cerrar</button>
         </div>
     </form>

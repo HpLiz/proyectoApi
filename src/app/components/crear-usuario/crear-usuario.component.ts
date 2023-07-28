@@ -60,10 +60,13 @@ export class CrearUsuarioComponent{
     // Verificar que todos los campos requeridos estén llenos
     if (this.nombre && this.apellido && this.usuario && this.contrasenia && this.c_con) {
       // Verificar que las contraseñas coincidan
-      this.isFormValid = this.contrasenia === this.c_con;
+      this.isFormValid = this.validarContrasenias();
     } else {
       this.isFormValid = false;
     }
+  }
+  validarContrasenias(){
+    return this.contrasenia === this.c_con;
   }
 
 }
