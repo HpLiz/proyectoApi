@@ -22,5 +22,17 @@ export class ViewClientesComponent implements OnInit{
         this.clientes = res;
       });
   }
+  editarC(id: any){
+    this.router.navigate(['editar-c',id])
+  }
+  borrarC(id: any){
+    this.clientesService.eliminar(id)
+    .subscribe((res: any) => {
+      console.log('Cliente eliminado:', res);
+      this.cargarClientes();
+    }, (error: any) => {
+      console.error('Error al eliminar el cliente:', error);
+    });
+  }
 
 }

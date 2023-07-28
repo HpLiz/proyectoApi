@@ -1,0 +1,45 @@
+<button class="btn" onclick="my_modal_1.showModal()" >Agregar usuario</button>
+<dialog #modalRef id="my_modal_1" class="modal">
+    <form method="dialog" class="modal-box bg-white rounded" (submit)="crearUser()">
+        <!-- Titulo -->
+        <h3 class="font-bold text-lg">Agregar usuario</h3>
+        <!-- Contenido -->
+                <div class="mb-4 md:flex md:justify-between">
+                    <div class="form-control w-1/2">
+                        <label class="label">
+                            <span class="label-text">Nombre</span>
+                        </label>
+                        <input type="text" placeholder="Nombre" class="input input-bordered" 
+                        name="nombre" [(ngModel)]="nombre"/>
+                    </div>
+                    <div class="form-control w-1/2">
+                        <label class="label">
+                            <span class="label-text">Apellido</span>
+                        </label>
+                        <input type="text" placeholder="Apellido" class="input input-bordered"
+                        name="apellido" [(ngModel)]="apellido"/>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Direccion</span>
+                    </label>
+                    <input type="email" placeholder="correo electrónico" class="input input-bordered"
+                    name="usuario" [(ngModel)]="direccion"/>
+                </div>
+                <div class="mb-4 md:flex md:justify-between">
+                    <div class="form-control w-1/2">
+                        <label class="label">
+                            <span class="label-text">Medico a cargo</span>
+                        </label>
+                        <input type="text" placeholder="contraseña" class="input input-bordered" 
+                        name="contrasenia" [(ngModel)]="usuario_id"/>
+                    </div>
+                </div>
+        <!-- Aquí van los botones -->
+        <div class="modal-action">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn" (click)="cerrarModal()">Cerrar</button>
+        </div>
+    </form>
+</dialog>

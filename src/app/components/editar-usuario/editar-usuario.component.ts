@@ -50,7 +50,7 @@ export class EditarUsuarioComponent implements OnInit{
         console.error('Error al actualizar el usuario:', error);
       });
   }
-/*----------------------- Eliminar ---------------------- */
-
-/*----------------------- Expandir ---------------------- */
+  regresar(){
+    this.router.navigate(['/usuarios-list']);
+  }
 }

@@ -16,6 +16,9 @@ import { ViewClientesComponent } from './components/view-clientes/view-clientes.
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 import { ViewMascotasComponent } from './components/view-mascotas/view-mascotas.component';
+import { XviewUsuariosComponent } from './components/xview-usuarios/xview-usuarios.component';
+import { EditarClienteComponent } from './components/editar-cliente/editar-cliente.component';
+import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,10 +26,13 @@ const rutas: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'usuarios-list', component: ViewUsuariosComponent },
-  { path: 'clientes-list', component: ViewClientesComponent },
-  { path: 'mascotas-list', component: ViewMascotasComponent },
   { path: 'crear-u', component: CrearUsuarioComponent },
   { path: 'editar-u/:id', component: EditarUsuarioComponent },
+  { path: 'clientes-list', component: ViewClientesComponent },
+  { path: 'crear-c', component: CrearClienteComponent },
+  { path: 'editar-c/:id', component: EditarClienteComponent },
+  { path: 'mascotas-list', component: ViewMascotasComponent },
+  { path: 'viewinfo-u/:id', component: XviewUsuariosComponent }
 ];
 
 @NgModule({
@@ -41,7 +47,10 @@ const rutas: Routes = [
     ViewClientesComponent,
     CrearUsuarioComponent,
     EditarUsuarioComponent,
-    ViewMascotasComponent
+    ViewMascotasComponent,
+    XviewUsuariosComponent,
+    EditarClienteComponent,
+    CrearClienteComponent
   ],
   imports: [
     BrowserModule,

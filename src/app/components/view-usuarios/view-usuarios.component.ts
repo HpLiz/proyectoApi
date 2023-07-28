@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { UsuarioI } from 'src/models/Usuario';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuariosService } from './../../../services/usuarios.service';
 
@@ -35,4 +34,8 @@ export class ViewUsuariosComponent implements OnInit{
       console.error('Error al eliminar el usuario:', error);
     });
   }
+
+  /*ver(id: any){
+    this.router.navigate(['/viewinfor-u',id]);
+  }*/
 }
