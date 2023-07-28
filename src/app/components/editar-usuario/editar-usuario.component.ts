@@ -53,4 +53,5 @@ export class EditarUsuarioComponent implements OnInit{
   regresar(){
     this.router.navigate(['/usuarios-list']);
   }
+  
 }

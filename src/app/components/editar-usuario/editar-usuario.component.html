@@ -9,37 +9,30 @@
                         <span class="label-text">Nombre</span>
                     </label>
                     <input type="text" placehol der="Nombre" class="input input-bordered" 
-                    name="nombre" [(ngModel)]="user.nombre"/>
+                    name="nombre" [(ngModel)]="user.nombre" [disabled]="true"/>
                 </div>
                 <div class="form-control w-1/2">
                     <label class="label">
                         <span class="label-text">Apellido</span>
                     </label>
                     <input type="text" placeholder="Apellido" class="input input-bordered" 
-                    name="apellido" [(ngModel)]="user.apellido"/>
+                    name="apellido" [(ngModel)]="user.apellido" [disabled]="true"/>
                 </div>
             </div>
-            <div class="form-control">
-                <label class="label">
-                    <span class="label-text">Correo electrónico</span>
-                </label>
-                <input type="email" placeholder="correo electrónico" class="input input-bordered" 
-                name="email" [(ngModel)]="user.usuario"/>
-            </div>
             <div class="mb-4 md:flex md:justify-between">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Correo electrónico</span>
+                    </label>
+                    <input type="email" placeholder="correo electrónico" class="input input-bordered" 
+                    name="email" [(ngModel)]="user.usuario" />
+                </div>
                 <div class="form-control w-1/2">
                     <label class="label">
-                        <span class="label-text">Contraseña</span>
+                        <span class="label-text">Nueva Contraseña</span>
                     </label>
                     <input type="text" placeholder="contraseña" class="input input-bordered" 
                     name="pass" [(ngModel)]="user.contrasenia"/>
-                </div>
-                <div class="form-control w-1/2">
-                    <label class="label">
-                        <span class="label-text">Nueva contraseña</span>
-                    </label>
-                    <input type="text" placeholder="c_contraseña" class="input input-bordered" 
-                    name="new_c"/>
                 </div>
             </div>
             <!-- Aquí van los botones -->

@@ -20,6 +20,7 @@ import { ViewMascotasComponent } from './components/view-mascotas/view-mascotas.
 import { XviewUsuariosComponent } from './components/xview-usuarios/xview-usuarios.component';
 import { EditarClienteComponent } from './components/editar-cliente/editar-cliente.component';
 import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 const rutas: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -51,7 +52,8 @@ const rutas: Routes = [
     ViewMascotasComponent,
     XviewUsuariosComponent,
     EditarClienteComponent,
-    CrearClienteComponent
+    CrearClienteComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
