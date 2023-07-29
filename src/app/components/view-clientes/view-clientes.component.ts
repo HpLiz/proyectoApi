@@ -36,6 +36,7 @@ export class ViewClientesComponent implements OnInit{
   borrarC(id: any){
     this.clientesService.eliminar(id)
     .subscribe((res: any) => {
+      this.router.navigate(['/clientes-list']);
       console.log('Cliente eliminado:', res);
       this.cargarClientes();
     }, (error: any) => {
